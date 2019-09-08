@@ -1,0 +1,144 @@
+<div [class.dark-theme]="useDefault">
+    <mat-sidenav-container fullscreen>
+
+        <mat-sidenav #sidenav [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()" position="end">
+
+            <mat-toolbar color="primary" style="height:250px;width:220px" align="center">
+                <div fxLayout="row wrap">
+                    <div fxFlex="100%">
+                        <img mat-card-avatar #avtar [src]="'assets/Images/profile.png'" style=" width: 160px !important;
+    height: 160px !important;
+    border-radius: 100px !important;">
+                    </div>
+                    <div fxFlex="100%">
+                        <span>
+                           Ranjeet P
+                        </span>
+                    </div>
+                </div>
+            </mat-toolbar>
+
+            <mat-nav-list color="warn">
+                <a mat-list-item [routerLink]='["home"]' (click)="sidenav.toggle()">
+                    <mat-icon svgIcon="view-dashboard"></mat-icon>&nbsp;
+                    <span>New File</span>
+                </a>
+
+                <a mat-list-item [routerLink]='["selecttemplate"]' (click)="sidenav.toggle()">
+                    <mat-icon>library_books
+                    </mat-icon>&nbsp;
+                    <span>Select template</span>
+                </a>
+
+                <a mat-list-item [routerLink]='["editor"]' (click)="sidenav.toggle()">
+                    <mat-icon>library_books
+                    </mat-icon>&nbsp;
+                    <span>Edior</span>
+                </a>
+
+                <a mat-list-item [routerLink]='["setting"]' (click)="sidenav.toggle()">
+                    <mat-icon>settings</mat-icon>&nbsp;
+                    <span>Settings</span>
+                </a>
+                <a mat-list-item [routerLink]='["../login"]'>
+                    <mat-icon>power_settings_new</mat-icon>&nbsp;
+                    <span>Logout</span>
+                </a>
+            </mat-nav-list>
+
+        </mat-sidenav>
+        <mat-toolbar color="primary" style="min-height:20px !important;" class="app-header">
+            <div fxLayoutAlign="start center">
+                <span>
+                    <button style="background-color:transparent;border-style:none;cursor:pointer;"
+                        (click)="sidenav.toggle()">
+                        <i class="material-icons toolbar-link-icon" style="color:white;">menu</i>
+                    </button>
+
+                    <mat-title>
+                        Editor
+                    </mat-title>
+                </span>
+            </div>
+
+            <span class="example-spacer" fxLayoutAlign="right">
+                <img src="../../assets/svg/logo-bnp.svg" style="height:30px !important;" alt="">
+            </span>
+
+            <div class="material-icons mdl-badge mdl-badge--overlap" [attr.data-badge]="1">1</div>
+
+            <div fxShow="true" fxHide.lt-md="true">
+                <span class="example-spacer"></span>
+
+                <span class="example-spacer"></span>
+
+                <span *ngIf="user" class="example-spacer">Hi &nbsp; {{user}}</span>
+
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon matBadge="10" matBadgeColor="warn">notifications</mat-icon>
+                </button>
+
+
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+
+                &nbsp;
+                <button mat-icon-button (click)="openDialog()">
+                    <mat-icon svgIcon="settings"></mat-icon>&nbsp;
+                </button>
+
+                <button mat-button [routerLink]='["../login"]'>
+                    <mat-icon svgIcon="power"></mat-icon>
+                    &nbsp;
+                    <span>Logout</span>
+                </button>
+
+                <mat-slide-toggle [checked]="useDefault" (change)="toggle($event)"></mat-slide-toggle>
+            </div>
+
+            <div fxLayout.xs="row" fxLayoutAlign="end none">
+                <button mat-icon-button fxShow="false" fxShow.lt-md="true">
+                    <mat-icon matBadge="10" matBadgeColor="warn">notifications</mat-icon>
+                </button>
+
+            </div>
+            <mat-menu #menu="matMenu">
+                <div fxShow="false" fxShow.lt-md="true">
+                    <button mat-menu-item *ngIf="user">
+                        <mat-icon>person</mat-icon>
+                        <span class="example-spacer">Hi &nbsp; {{user}}</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>notifications</mat-icon>
+                        Notifications
+                    </button>
+                </div>
+                <button fxShow="false" fxShow.lt-md="true" mat-menu-item [routerLink]='["../login"]'>
+                    <mat-icon svgIcon="power"></mat-icon>
+                    &nbsp;
+                    <span>Logout</span>
+                </button>
+
+                <mat-slide-toggle>
+                    Slide me!
+                </mat-slide-toggle>
+            </mat-menu>
+
+
+        </mat-toolbar>
+        <mat-progress-bar *ngIf="showprogressbar" mode="indeterminate" width="100%" color="warn"></mat-progress-bar>
+
+        <!-- <div class="inner-sidenav-content">
+            <div fxFlexLayout="row" fxLayoutAlign="space-around center">
+                <div fxFlex="100%">
+                   
+                </div>
+            </div>
+        </div> -->
+        <router-outlet style="background-color: antiquewhite"></router-outlet>
+
+
+    </mat-sidenav-container>
+</div>

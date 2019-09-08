@@ -1,0 +1,29 @@
+<div fxLayout="row wrap">
+    <div fxFlex="50">
+        <div fxLayout="row wrap">
+            <div fxFlex>
+                <mat-radio-group aria-label="Split into" [(ngModel)]="mode">
+                    <mat-radio-button value="horizontal">Horizontal</mat-radio-button> &nbsp;
+                    <mat-radio-button value="vertical">Vertical</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div fxFlex="100">
+                <mat-form-field>
+                    <input matInput placeholder="Input" type="number" [(ngModel)]="sectionheight">
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="50">
+        <div style="width: 200px; height: 200px; background: gray;border: 1px solid;">
+            <as-split [direction]="mode">
+                <as-split-area [size]="sectionheight">
+                    Preview Section
+                </as-split-area>
+                <as-split-area [size]="100-sectionheight">
+                    Content Edit Section
+                </as-split-area>
+            </as-split>
+        </div>
+    </div>
+</div>

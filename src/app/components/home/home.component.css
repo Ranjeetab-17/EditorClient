@@ -1,0 +1,13 @@
+body {
+    background: none !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-card-avatar {
+    width: 160px !important;
+    height: 160px !important;
+    border-radius: 100px !important;
+}

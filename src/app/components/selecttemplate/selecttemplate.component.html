@@ -1,0 +1,11 @@
+<div [@listAnimation]="mydata.length" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="8px" fxLayout="row wrap">
+    <mat-card *ngFor="let i of mydata" style="margin-top: 15px !important;">
+        <mat-card-title>
+            Template
+        </mat-card-title>
+        <mat-card-content>
+            <!-- <mat-icon svgIcon="file-pdf"></mat-icon> -->
+            <img src="../../../assets/Images/pdf.svg" alt="" style="width: 200px;height: 200px;">
+        </mat-card-content>
+    </mat-card>
+</div>
