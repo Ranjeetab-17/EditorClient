@@ -10,6 +10,8 @@ import { SettingsComponent } from '../settings/settings.component';
 export class HomeComponent implements OnInit {
 
   public useDefault = false;
+  user: any;
+  showprogressbar: any;
 
   constructor(public dialog: MatDialog) { }
 

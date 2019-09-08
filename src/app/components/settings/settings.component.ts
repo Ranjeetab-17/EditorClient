@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
 
   mode: string = 'horizontal';
-
+  sectionheight: any;
   constructor() { }
 
   ngOnInit() {

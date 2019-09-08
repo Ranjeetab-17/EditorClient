@@ -100,44 +100,55 @@
 
             <div fxLayout.xs="row" fxLayoutAlign="end none">
                 <button mat-icon-button fxShow="false" fxShow.lt-md="true">
-                    <mat-icon matBadge="10" matBadgeColor="warn">notifications</mat-icon>
+                    <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
                 </button>
 
             </div>
+
             <mat-menu #menu="matMenu">
-                <div fxShow="false" fxShow.lt-md="true">
-                    <button mat-menu-item *ngIf="user">
+                <mat-list role="list">
+                    <mat-list-item role="listitem">
+                        <img mat-list-avatar src="../../../assets/Images/ranjeet.jpg" style="height: 40px;width: 40px;border-radius:20px" alt="Photo of a Shiba Inu">
+                        <h4 mat-line>Ranjeet created new template</h4>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <img mat-list-avatar src="../../../assets/Images/profile.png" style="height: 40px;width: 40px;border-radius:20px" alt="Photo of a Shiba Inu">
+                        <h4 mat-line>Meet created new template</h4>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <img mat-list-avatar src="../../../assets/Images/profile.png" style="height: 40px;width: 40px;border-radius:20px " alt="Photo of a Shiba Inu ">
+                        <h4 mat-line> Vedant created new template</h4>
+                    </mat-list-item>
+                </mat-list>
+                <!-- <div fxShow="false " fxShow.lt-md="true ">
+                    <button mat-menu-item *ngIf="user ">
                         <mat-icon>person</mat-icon>
-                        <span class="example-spacer">Hi &nbsp; {{user}}</span>
+                        <span class="example-spacer ">Hi &nbsp; {{user}}</span>
                     </button>
                     <button mat-menu-item>
                         <mat-icon>notifications</mat-icon>
                         Notifications
                     </button>
                 </div>
-                <button fxShow="false" fxShow.lt-md="true" mat-menu-item [routerLink]='["../login"]'>
-                    <mat-icon svgIcon="power"></mat-icon>
+                <button fxShow="false " fxShow.lt-md="true " mat-menu-item [routerLink]='["../login "]'>
+                    <mat-icon svgIcon="power "></mat-icon>
                     &nbsp;
                     <span>Logout</span>
-                </button>
-
-                <mat-slide-toggle>
-                    Slide me!
-                </mat-slide-toggle>
+                </button> -->
             </mat-menu>
 
 
         </mat-toolbar>
-        <mat-progress-bar *ngIf="showprogressbar" mode="indeterminate" width="100%" color="warn"></mat-progress-bar>
+        <mat-progress-bar *ngIf="showprogressbar " mode="indeterminate " width="100% " color="warn "></mat-progress-bar>
 
-        <!-- <div class="inner-sidenav-content">
-            <div fxFlexLayout="row" fxLayoutAlign="space-around center">
-                <div fxFlex="100%">
+        <!-- <div class="inner-sidenav-content ">
+            <div fxFlexLayout="row " fxLayoutAlign="space-around center ">
+                <div fxFlex="100% ">
                    
                 </div>
             </div>
         </div> -->
-        <router-outlet style="background-color: antiquewhite"></router-outlet>
+        <router-outlet style="background-color: antiquewhite "></router-outlet>
 
 
     </mat-sidenav-container>
